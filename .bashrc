@@ -11,6 +11,15 @@ if [[ -d "$HOME/.pyenv" ]]; then
     eval "$(pyenv init -)"
 fi
 
+# Remove linux mint X title bar
+. /etc/os-release
+if [[ $ID = "linuxmint" ]]; then
+    type xdotool > /dev/null 2>&1 && {
+        xprop -id $(xdotool getactivewindow) \
+        -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS "0x2, 0x0, 0x2, 0x0, 0x0"
+    }
+fi
+
 # Make directory and enter it in one command
 function mcd {
     local newdir='mcd_failed'
