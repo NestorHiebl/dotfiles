@@ -1,6 +1,7 @@
 # Filesystem / navigation
-alias ll='ls -hAlFv --group-directories-first'
-alias la='ls -hlFv --group-directories-first'
+alias ls='ls --color=tty --group-directories-first'
+alias ll='ls -hAlFv'
+alias la='ls -hlFv'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -22,3 +23,6 @@ alias gs='git status'
 
 # Dotfile management
 alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+
+# Kitty aliases
+alias icat='kitty +kitten icat'
