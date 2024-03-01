@@ -11,6 +11,12 @@ if [[ -d "$HOME/.pyenv" ]]; then
     eval "$(pyenv init -)"
 fi
 
+# Check if neovim is installed under /opt; if so, add it to PATH
+NVIM_INSTALL_DIR="/opt/nvim-linux64/bin"
+if [[ -d $NVIM_INSTALL_DIR ]]; then
+    export PATH="$PATH:$NVIM_INSTALL_DIR"
+fi
+
 # Remove linux mint X title bar
 . /etc/os-release
 if [[ $ID = "linuxmint" ]]; then

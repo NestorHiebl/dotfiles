@@ -15,3 +15,8 @@ highlight CursorLineNR cterm=bold
 
 syntax on
 
+" Markdown options
+autocmd FileType markdown set textwidth=80
+
+" Auto-open quickfix window if make fails
+autocmd QuickFixCmdPost [^l]* cwindow
