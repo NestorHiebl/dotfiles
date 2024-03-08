@@ -15,8 +15,15 @@ highlight CursorLineNR cterm=bold
 
 syntax on
 
-" Markdown options
-autocmd FileType markdown set textwidth=80
+" Filetype options
+autocmd FileType markdown,tex set textwidth=80
 
 " Auto-open quickfix window if make fails
 autocmd QuickFixCmdPost [^l]* cwindow
+
+" Double colon opens the command history
+" nnoremap :: q:
+
+" Same logic for search history
+" nnoremap // q/
+" nnoremap ?? q?

@@ -13,6 +13,7 @@ alias :q='exit'
 alias vim='nvim'
 alias vi='vim'
 alias view='vi -R'
+alias vid='vi -d'
 
 # Git
 alias ga='git add'

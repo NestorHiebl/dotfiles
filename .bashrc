@@ -4,6 +4,8 @@ if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases;
 fi
 
+PS1="\e[0;34m \w ; \e[0m"
+
 # Only initiate pyenv if it is available on the system
 if [[ -d "$HOME/.pyenv" ]]; then 
     export PYENV_ROOT="$HOME/.pyenv"
@@ -16,6 +18,9 @@ NVIM_INSTALL_DIR="/opt/nvim-linux64/bin"
 if [[ -d $NVIM_INSTALL_DIR ]]; then
     export PATH="$PATH:$NVIM_INSTALL_DIR"
 fi
+
+MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"
+PATH="$PATH:/usr/local/texlive/2023/bin/x86_64-linux"
 
 # Remove linux mint X title bar
 . /etc/os-release
