@@ -17,6 +17,7 @@ syntax on
 
 " Filetype options
 autocmd FileType markdown,tex set textwidth=80
+autocmd FileType markdown,tex setlocal spell spelllang=en_us
 
 " Auto-open quickfix window if make fails
 autocmd QuickFixCmdPost [^l]* cwindow
