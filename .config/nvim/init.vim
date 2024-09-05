@@ -12,6 +12,8 @@ set cursorline
 set cursorlineopt=number
 highlight lineNr ctermfg=grey
 highlight CursorLineNR cterm=bold
+" Turn off default color scheme on newer Neovim versions
+set notermguicolors
 
 syntax on
 
