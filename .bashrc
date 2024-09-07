@@ -7,7 +7,7 @@ fi
 PS1="\e[0;34m \w ; \e[0m"
 
 # Only initiate pyenv if it is available on the system
-if [[ -d "$HOME/.pyenv" ]]; then 
+if [[ -d "$HOME/.pyenv" ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
@@ -47,3 +47,7 @@ function mcd {
     fi
     builtin cd "$newdir"
 }
+
+# Initialize GHC environment
+[[ -f "$HOME/.ghcup/env" ]] && . "$HOME/.ghcup/env"
+
