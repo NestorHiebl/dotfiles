@@ -49,3 +49,7 @@ function mcd {
     fi
     builtin cd "$newdir"
 }
+
+# Initialize GHC environment
+[[ -f "$HOME/.ghcup/env" ]] && . "$HOME/.ghcup/env"
+
