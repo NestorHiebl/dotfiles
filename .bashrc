@@ -7,7 +7,7 @@ fi
 PS1="\e[0;34m \w ; \e[0m"
 
 # Only initiate pyenv if it is available on the system
-if [[ -d "$HOME/.pyenv" ]]; then 
+if [[ -d "$HOME/.pyenv" ]]; then
     export PYENV_ROOT="$HOME/.pyenv"
     command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init -)"
@@ -28,6 +28,8 @@ if [[ $ID = "linuxmint" ]]; then
     type xdotool > /dev/null 2>&1 && {
         xprop -id $(xdotool getactivewindow) \
         -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS "0x2, 0x0, 0x2, 0x0, 0x0"
+    } || {
+        echo "Don't like that title bar? Install xdotool to make it go away"
     }
 fi
 
