@@ -4,7 +4,8 @@ if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases;
 fi
 
-PS1="\e[0;34m \w ; \e[0m"
+# Control sequences in the prompt must be wrapped in \[ \] to properly display
+PS1="\[\e[0;34m\] \w ; \[\e[0m\]"
 
 # Only initiate pyenv if it is available on the system
 if [[ -d "$HOME/.pyenv" ]]; then
