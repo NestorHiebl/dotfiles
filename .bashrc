@@ -20,19 +20,9 @@ if [[ -d $NVIM_INSTALL_DIR ]]; then
     export PATH="$PATH:$NVIM_INSTALL_DIR"
 fi
 
-MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"
-PATH="$PATH:/usr/local/texlive/2023/bin/x86_64-linux"
-
-# Remove linux mint X title bar
-. /etc/os-release
-if [[ $ID = "linuxmint" ]]; then
-    type xdotool > /dev/null 2>&1 && {
-        xprop -id $(xdotool getactivewindow) \
-        -f _MOTIF_WM_HINTS 32c -set _MOTIF_WM_HINTS "0x2, 0x0, 0x2, 0x0, 0x0"
-    } || {
-        echo "Don't like that title bar? Install xdotool to make it go away"
-    }
-fi
+MANPATH="$MANPATH:/usr/local/texlive/2025/texmf-dist/doc/man"
+INFOPATH="$INFOPATH:/usr/local/texlive/2025/texmf-dist/doc/info"
+PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
 
 # Make directory and enter it in one command
 function mcd {
