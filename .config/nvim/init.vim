@@ -33,7 +33,7 @@ set statusline+=\ %{&fileencoding}
 set statusline+=\ [%4l/%L]\ %3c\ %3p%%
 
 " Filetype options
-autocmd FileType markdown,tex,html set textwidth=100
+autocmd FileType markdown,tex,html set textwidth=90
 autocmd FileType markdown,tex,html setlocal spell spelllang=en_us,de
 autocmd BufRead,BufNewFile *.pv setfiletype proverif
 autocmd BufRead,BufNewFile *.pl setfiletype prolog
