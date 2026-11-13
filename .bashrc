@@ -24,6 +24,12 @@ MANPATH="$MANPATH:/usr/local/texlive/2025/texmf-dist/doc/man"
 INFOPATH="$INFOPATH:/usr/local/texlive/2025/texmf-dist/doc/info"
 PATH="$PATH:/usr/local/texlive/2025/bin/x86_64-linux"
 
+# Check if the GNU ARM toolchain is installed; if so, add it to PATH
+GCC_ARM_INSTALL_DIR="$HOME/.local/arm-gnu-toolchain-15.3.rel2-x86_64-arm-none-eabi/bin"
+if [[ -d $GCC_ARM_INSTALL_DIR ]]; then
+    export PATH="$PATH:$GCC_ARM_INSTALL_DIR"
+fi
+
 # Make directory and enter it in one command
 function mcd {
     local newdir='mcd_failed'
